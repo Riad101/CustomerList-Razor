@@ -1,0 +1,40 @@
+﻿@model List<Customers.Models.UserModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+    <style>
+        .label1{
+            font-size: 36px;
+            color:chocolate;
+            font-family: Arial;
+            font-weight:bold;
+            display:block;
+        }
+
+        #label2 {
+            font-size: 20px;
+            color: cornflowerblue;
+            
+        }
+    </style>
+</head>
+<body>
+    <div> 
+        <h1>Amazing News Story</h1>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+        @Html.Label("Welcome to Razor", new { @class="label1"})
+        @Html.Label("These are my Customers", new {@class="label1", @id="label2" })
+
+        @Html.ActionLink("Refresh this page", "../test")
+    </div>
+</body>
+</html>
