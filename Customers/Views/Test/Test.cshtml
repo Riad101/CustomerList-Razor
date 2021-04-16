@@ -21,9 +21,25 @@
 
         #label2 {
             font-size: 20px;
-            color: cornflowerblue;
-            
+            color: cornflowerblue;            
         }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
     </style>
 </head>
 <body>
@@ -33,6 +49,27 @@
 
         @Html.Label("Welcome to Razor", new { @class="label1"})
         @Html.Label("These are my Customers", new {@class="label1", @id="label2" })
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        @foreach( var u in Model)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(modelItem => u.Name) </td>
+                    <td> @Html.DisplayFor(modelItem => u.EmailAddress) </td>
+                    <td> @Html.DisplayFor(modelItem => u.PhoneNumber) </td>
+                </tr>
+            }
+    </table>
+
+
+
+
+
 
         @Html.ActionLink("Refresh this page", "../test")
     </div>
